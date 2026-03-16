@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sushil Jhabak — Senior Manager, Procurement & Finance</title>
+<title>Sushil Jhabak — Senior General Manager, Procurement & Supply Chain</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -13,12 +13,13 @@
   --paper:#f4f1eb; --paper2:#ece7dd;
   --navy:#0f2a4a; --navy2:#1a4070;
   --amber:#b8860b; --amber2:#d4a017; --amber3:#f0c040;
-  --steel:#2a7a9a; --steel2:#3a9abf;
+  --steel:#1e6fa0; --steel2:#2e92cc;
   --forest:#166534; --forest2:#22a855;
   --plum:#5c2a7a; --plum2:#8b5cf6;
   --ruby:#9a1c2a; --ruby2:#e53e5e;
+  --teal:#1a7a6a; --teal2:#20b09a;
   --muted:#6b6f7e;
-  --line:rgba(184,134,11,0.11);
+  --line:rgba(184,134,11,0.10);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:#888580;font-family:'DM Sans',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
@@ -39,16 +40,17 @@ a{color:inherit;text-decoration:none;}
 /* ══════════ HERO ══════════ */
 .hero{position:relative;background:var(--navy);overflow:hidden;z-index:1;flex-shrink:0;}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.22) 0%,transparent 65%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber),var(--steel2),var(--plum2),var(--forest2),var(--amber2));}
-.hero-stripe{position:absolute;top:0;right:155px;width:2px;height:100%;background:rgba(184,134,11,.09);transform:skewX(-18deg);pointer-events:none;}
-.hero-stripe2{position:absolute;top:0;right:110px;width:1px;height:100%;background:rgba(58,154,191,.08);transform:skewX(-18deg);pointer-events:none;}
-.hero-stripe3{position:absolute;top:0;right:68px;width:1px;height:100%;background:rgba(139,92,246,.07);transform:skewX(-18deg);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--amber),var(--steel2),var(--teal2),var(--forest2),var(--amber2));}
+.hero-stripe{position:absolute;top:0;right:155px;width:2px;height:100%;background:rgba(184,134,11,.09);transform:skewX(-18deg);}
+.hero-stripe2{position:absolute;top:0;right:110px;width:1px;height:100%;background:rgba(46,146,204,.08);transform:skewX(-18deg);}
+.hero-stripe3{position:absolute;top:0;right:68px;width:1px;height:100%;background:rgba(32,176,154,.07);transform:skewX(-18deg);}
 
 .hero-inner{display:grid;grid-template-columns:1fr auto;align-items:stretch;padding:22px 34px 20px;gap:16px;position:relative;z-index:2;}
 .hero-left{display:flex;gap:18px;align-items:flex-end;}
-.hero-monogram{width:106px;height:106px;border-radius:6px;border:2px solid rgba(184,134,11,.7);background:linear-gradient(135deg,var(--navy2),var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;align-self:flex-end;box-shadow:0 6px 26px rgba(0,0,0,.6);}
-.hero-monogram .initials{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--amber2);line-height:1;letter-spacing:.05em;}
-.hero-monogram .mono-sub{font-family:'JetBrains Mono',monospace;font-size:7px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase;margin-top:3px;}
+.hero-photo{width:106px;height:106px;border-radius:6px;border:2px solid rgba(184,134,11,.7);object-fit:cover;object-position:center top;flex-shrink:0;align-self:flex-end;box-shadow:0 6px 26px rgba(0,0,0,.6);}
+.hero-photo-fallback{width:106px;height:106px;border-radius:6px;border:2px solid rgba(184,134,11,.7);background:linear-gradient(135deg,var(--navy2),var(--navy));display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;align-self:flex-end;box-shadow:0 6px 26px rgba(0,0,0,.6);}
+.hero-photo-fallback .initials{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--amber2);line-height:1;}
+.hero-photo-fallback .mono-sub{font-family:'JetBrains Mono',monospace;font-size:7px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase;margin-top:3px;}
 .hero-text{flex:1;}
 .hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(184,134,11,.12);border:1px solid rgba(184,134,11,.35);border-radius:2px;padding:3px 11px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--amber2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--amber3);animation:pulse 2.2s ease-in-out infinite;}
@@ -56,216 +58,227 @@ a{color:inherit;text-decoration:none;}
 .hero-name{font-family:'Bebas Neue',sans-serif;font-size:58px;color:#fff;letter-spacing:.05em;line-height:.88;}
 .hero-name span{color:var(--amber2);}
 .hero-title-block{margin-top:10px;display:flex;flex-direction:column;gap:4px;}
-.hero-title-row1,.hero-title-row2{display:flex;align-items:center;gap:0;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;}
+.hero-title-row1,.hero-title-row2{display:flex;align-items:center;gap:0;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;flex-wrap:wrap;row-gap:3px;}
 .t-seg{padding:3px 9px;border-radius:2px;white-space:nowrap;}
 .t-seg.amber{background:rgba(184,134,11,.15);color:var(--amber3);border:1px solid rgba(184,134,11,.28);}
-.t-seg.steel{background:rgba(42,122,154,.14);color:var(--steel2);border:1px solid rgba(42,122,154,.26);}
+.t-seg.steel{background:rgba(30,111,160,.16);color:var(--steel2);border:1px solid rgba(30,111,160,.28);}
 .t-seg.forest{background:rgba(22,101,52,.14);color:var(--forest2);border:1px solid rgba(22,101,52,.26);}
+.t-seg.teal{background:rgba(26,122,106,.14);color:var(--teal2);border:1px solid rgba(26,122,106,.26);}
 .t-seg.plum{background:rgba(92,42,122,.14);color:var(--plum2);border:1px solid rgba(92,42,122,.26);}
 .t-div{color:rgba(255,255,255,.22);padding:0 3px;font-size:10px;}
 
-.hero-stats{display:flex;flex-direction:column;gap:6px;justify-content:flex-end;}
-.stat-pill{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:2px;padding:7px 14px;min-width:130px;text-align:right;}
-.stat-pill .num{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--amber2);line-height:1;letter-spacing:.04em;}
-.stat-pill .lbl{font-size:7.5px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.13em;font-family:'JetBrains Mono',monospace;margin-top:1px;}
+.hero-stats{display:flex;flex-direction:column;gap:5px;justify-content:flex-end;}
+.stat-pill{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:2px;padding:6px 13px;min-width:138px;text-align:right;}
+.stat-pill .num{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--amber2);line-height:1;letter-spacing:.04em;}
+.stat-pill .lbl{font-size:7px;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.13em;font-family:'JetBrains Mono',monospace;margin-top:1px;}
 
 /* CONTACT STRIP */
 .contact-strip{background:var(--ink3);display:flex;align-items:center;position:relative;z-index:1;border-bottom:1px solid rgba(255,255,255,.05);flex-shrink:0;}
-.contact-item{flex:1;display:flex;align-items:center;gap:5px;padding:8px 9px;border-right:1px solid rgba(255,255,255,.055);font-size:8.5px;color:rgba(255,255,255,.55);font-family:'JetBrains Mono',monospace;white-space:nowrap;overflow:hidden;}
+.contact-item{flex:1;display:flex;align-items:center;gap:5px;padding:7px 8px;border-right:1px solid rgba(255,255,255,.055);font-size:8px;color:rgba(255,255,255,.55);font-family:'JetBrains Mono',monospace;white-space:nowrap;overflow:hidden;}
 .contact-item:last-child{border-right:none;}
-.contact-item .icon{width:17px;height:17px;background:rgba(184,134,11,.13);border-radius:2px;display:grid;place-items:center;font-size:9px;flex-shrink:0;color:var(--amber2);}
+.contact-item .icon{width:16px;height:16px;background:rgba(184,134,11,.13);border-radius:2px;display:grid;place-items:center;font-size:8px;flex-shrink:0;color:var(--amber2);}
 
 /* BODY GRID */
-.body-grid{display:grid;grid-template-columns:196px 1fr;position:relative;z-index:1;flex:1;overflow:hidden;}
+.body-grid{display:grid;grid-template-columns:198px 1fr;position:relative;z-index:1;flex:1;overflow:hidden;}
 
 /* SIDEBAR */
-.sidebar{background:var(--ink2);padding:15px 14px;position:relative;overflow:hidden;}
-.sidebar::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--amber),var(--steel2),var(--plum2),var(--amber));}
-.s-section{margin-bottom:14px;}
-.s-heading{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--amber2);text-transform:uppercase;letter-spacing:.22em;margin-bottom:9px;display:flex;align-items:center;gap:6px;}
+.sidebar{background:var(--ink2);padding:14px 13px;position:relative;overflow:hidden;}
+.sidebar::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--amber2),var(--steel2),var(--teal2),var(--amber2));}
+.s-section{margin-bottom:13px;}
+.s-heading{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--amber2);text-transform:uppercase;letter-spacing:.22em;margin-bottom:8px;display:flex;align-items:center;gap:6px;}
 .s-heading::after{content:'';flex:1;height:1px;background:rgba(184,134,11,.22);}
-.edu-item{margin-bottom:9px;padding-left:9px;border-left:2px solid rgba(184,134,11,.22);}
-.edu-item .deg{font-size:9.5px;font-weight:700;color:#fff;line-height:1.3;}
-.edu-item .school{font-size:8.5px;color:rgba(255,255,255,.42);font-family:'JetBrains Mono',monospace;margin-top:1px;}
-.edu-item .year{font-size:8px;color:var(--amber2);margin-top:1px;font-family:'JetBrains Mono',monospace;}
-.inline-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:7px;padding:1px 5px;border-radius:2px;background:rgba(184,134,11,.12);color:var(--amber2);border:1px solid rgba(184,134,11,.28);margin-left:3px;vertical-align:middle;}
-.skill-row{margin-bottom:8px;}
-.skill-row .skill-label{display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.72);margin-bottom:3px;}
-.skill-row .skill-label span:last-child{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--steel2);}
-.bar-track{height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;}
+.edu-item{margin-bottom:8px;padding-left:9px;border-left:2px solid rgba(184,134,11,.22);}
+.edu-item .deg{font-size:9px;font-weight:700;color:#fff;line-height:1.3;}
+.edu-item .school{font-size:8px;color:rgba(255,255,255,.42);font-family:'JetBrains Mono',monospace;margin-top:1px;}
+.edu-item .year{font-size:7.5px;color:var(--amber2);margin-top:1px;font-family:'JetBrains Mono',monospace;}
+.inline-badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:6.5px;padding:1px 4px;border-radius:2px;background:rgba(184,134,11,.12);color:var(--amber2);border:1px solid rgba(184,134,11,.28);margin-left:3px;vertical-align:middle;}
+.skill-row{margin-bottom:7px;}
+.skill-row .skill-label{display:flex;justify-content:space-between;font-size:8.5px;color:rgba(255,255,255,.72);margin-bottom:3px;}
+.skill-row .skill-label span:last-child{font-family:'JetBrains Mono',monospace;font-size:7px;color:var(--steel2);}
+.bar-track{height:3.5px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;}
 .bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--steel2),var(--amber2));}
 .tech-wrap{display:flex;flex-wrap:wrap;gap:3px;}
-.tech-tag{font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:2px;color:rgba(255,255,255,.6);}
-.tech-tag.hi{background:rgba(42,122,154,.14);border-color:rgba(42,122,154,.32);color:var(--steel2);}
+.tech-tag{font-family:'JetBrains Mono',monospace;font-size:7px;padding:2px 5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:2px;color:rgba(255,255,255,.6);}
+.tech-tag.hi{background:rgba(30,111,160,.14);border-color:rgba(30,111,160,.32);color:var(--steel2);}
 .tech-tag.amber{background:rgba(184,134,11,.12);border-color:rgba(184,134,11,.32);color:var(--amber2);}
-.award-item{display:flex;gap:7px;margin-bottom:8px;align-items:flex-start;}
-.award-dot{width:6px;height:6px;border-radius:50%;background:var(--amber2);margin-top:4px;flex-shrink:0;}
-.award-text{font-size:8.5px;color:rgba(255,255,255,.55);line-height:1.45;}
-.award-text strong{color:rgba(255,255,255,.88);display:block;font-size:9px;}
+.award-item{display:flex;gap:7px;margin-bottom:7px;align-items:flex-start;}
+.award-dot{width:6px;height:6px;border-radius:50%;background:var(--amber2);margin-top:3px;flex-shrink:0;}
+.award-text{font-size:8px;color:rgba(255,255,255,.55);line-height:1.45;}
+.award-text strong{color:rgba(255,255,255,.88);display:block;font-size:8.5px;}
+
+/* PERSONAL INFO */
+.personal-item{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:8px;color:rgba(255,255,255,.6);}
+.personal-item .pi-icon{font-size:10px;flex-shrink:0;}
+.personal-item strong{color:rgba(255,255,255,.85);}
 
 /* MAIN */
-.main{padding:15px 21px;background:var(--paper);}
-.summary-block{background:var(--navy);border-radius:4px;padding:11px 15px;margin-bottom:13px;position:relative;overflow:hidden;}
+.main{padding:14px 20px;background:var(--paper);}
+.summary-block{background:var(--navy);border-radius:4px;padding:11px 15px;margin-bottom:12px;position:relative;overflow:hidden;}
 .summary-block::before{content:'"';position:absolute;top:-10px;left:7px;font-size:70px;font-family:'Bebas Neue',sans-serif;color:rgba(184,134,11,.07);line-height:1;pointer-events:none;}
-.summary-block p{font-size:9.5px;color:rgba(255,255,255,.72);line-height:1.68;position:relative;z-index:1;}
+.summary-block p{font-size:9.5px;color:rgba(255,255,255,.74);line-height:1.68;position:relative;z-index:1;}
 .summary-block p strong{color:var(--amber2);}
-.sec-head{display:flex;align-items:center;gap:9px;margin-bottom:11px;}
-.sec-head h2{font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.11em;color:var(--ink);white-space:nowrap;}
+.sec-head{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.sec-head h2{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.11em;color:var(--ink);white-space:nowrap;}
 .sec-head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--ink),transparent);opacity:.13;}
-.sec-head .tag{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--steel);text-transform:uppercase;letter-spacing:.15em;white-space:nowrap;}
+.sec-head .tag{font-family:'JetBrains Mono',monospace;font-size:7px;color:var(--steel);text-transform:uppercase;letter-spacing:.15em;white-space:nowrap;}
 
 /* EXP CARDS */
-.exp-card{margin-bottom:12px;position:relative;padding-left:15px;}
+.exp-card{margin-bottom:11px;position:relative;padding-left:14px;}
 .exp-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:linear-gradient(180deg,var(--amber2),transparent);}
-.exp-card::after{content:'';position:absolute;top:6px;left:-3px;width:8px;height:8px;border-radius:50%;background:var(--amber2);border:2px solid var(--paper);}
+.exp-card::after{content:'';position:absolute;top:5px;left:-3px;width:8px;height:8px;border-radius:50%;background:var(--amber2);border:2px solid var(--paper);}
 .exp-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:3px;gap:4px;}
-.exp-role{font-weight:700;font-size:12px;color:var(--ink);line-height:1.2;}
-.exp-company{font-size:10.5px;color:var(--steel);font-weight:600;margin-top:1px;}
-.exp-period{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);background:var(--paper2);padding:2px 7px;border-radius:2px;white-space:nowrap;flex-shrink:0;}
-.exp-kpi-row{display:flex;gap:5px;margin:5px 0 4px;flex-wrap:wrap;}
+.exp-role{font-weight:700;font-size:11.5px;color:var(--ink);line-height:1.2;}
+.exp-company{font-size:10px;color:var(--steel);font-weight:600;margin-top:1px;}
+.exp-period{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);background:var(--paper2);padding:2px 7px;border-radius:2px;white-space:nowrap;flex-shrink:0;}
+.exp-kpi-row{display:flex;gap:4px;margin:5px 0 4px;flex-wrap:wrap;}
 .kpi-mini{background:var(--navy);color:var(--amber2);font-family:'Bebas Neue',sans-serif;font-size:11px;padding:3px 8px;border-radius:2px;letter-spacing:.04em;line-height:1.3;}
-.kpi-mini small{display:block;font-family:'DM Sans',sans-serif;font-size:7.5px;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.09em;font-weight:400;}
+.kpi-mini small{display:block;font-family:'DM Sans',sans-serif;font-size:7px;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.09em;font-weight:400;}
 .exp-bullets{list-style:none;margin-top:5px;}
-.exp-bullets li{font-size:10px;color:#3a3d4a;line-height:1.55;padding-left:12px;position:relative;margin-bottom:2px;}
+.exp-bullets li{font-size:9.5px;color:#3a3d4a;line-height:1.55;padding-left:12px;position:relative;margin-bottom:2px;}
 .exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--amber2);font-size:8px;top:1px;}
 .exp-bullets li strong{color:var(--ink);font-weight:700;}
 
-.co-badge{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:7.5px;padding:2px 7px;border-radius:2px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-left:6px;vertical-align:middle;}
-.co-badge.mfg{background:rgba(42,122,154,.16);border:1px solid rgba(42,122,154,.4);color:var(--steel2);}
-.co-badge.ca{background:rgba(22,101,52,.14);border:1px solid rgba(22,101,52,.35);color:#4ade80;}
+.co-badge{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:7px;padding:2px 7px;border-radius:2px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-left:6px;vertical-align:middle;}
+.co-badge.mfg{background:rgba(30,111,160,.16);border:1px solid rgba(30,111,160,.4);color:var(--steel2);}
 .co-badge.hosp{background:rgba(92,42,122,.14);border:1px solid rgba(92,42,122,.35);color:var(--plum2);}
 
 /* ── PAGE HEADER p2/p3 ── */
-.page-header{background:var(--ink2);padding:11px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--amber2);position:relative;z-index:1;flex-shrink:0;}
-.ph-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:.07em;}
+.page-header{background:var(--ink2);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--amber2);position:relative;z-index:1;flex-shrink:0;}
+.ph-name{font-family:'Bebas Neue',sans-serif;font-size:19px;color:#fff;letter-spacing:.07em;}
 .ph-name span{color:var(--amber2);}
-.ph-section{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--steel2);text-transform:uppercase;letter-spacing:.3em;}
-.ph-pg{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);}
+.ph-section{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--steel2);text-transform:uppercase;letter-spacing:.25em;}
+.ph-pg{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--muted);}
 
 /* P2 BODY */
-.p2-body{padding:14px 21px;position:relative;z-index:1;flex:1;display:flex;flex-direction:column;}
-.exp-card-full{margin-bottom:11px;padding:11px 13px;border:1px solid var(--paper2);border-radius:4px;border-left:3px solid var(--amber2);background:rgba(255,255,255,.6);position:relative;}
+.p2-body{padding:13px 20px;position:relative;z-index:1;flex:1;display:flex;flex-direction:column;}
+.exp-card-full{margin-bottom:10px;padding:10px 13px;border:1px solid var(--paper2);border-radius:4px;border-left:3px solid var(--amber2);background:rgba(255,255,255,.6);position:relative;}
 .company-logo-area{display:flex;align-items:center;gap:9px;margin-bottom:6px;}
 .logo-box{width:34px;height:34px;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:10px;color:#fff;flex-shrink:0;line-height:1.1;}
 .logo-box .logo-label{font-family:'JetBrains Mono',monospace;font-size:5px;letter-spacing:.05em;margin-top:1px;opacity:.85;font-weight:700;}
-.logo-box.mfg-box{background:linear-gradient(135deg,#0f2a4a,#1a5080);}
+.logo-box.ecl-box{background:linear-gradient(135deg,#0f2a4a,#1e5a9a);}
 .logo-box.hosp-box{background:linear-gradient(135deg,#5c2a7a,#8b2fcc);}
-.logo-box.ca-box{background:linear-gradient(135deg,#145214,#2e8b2e);}
-.logo-box.ca2-box{background:linear-gradient(135deg,#6a1a8c,#9b45c8);}
-.role-title{font-weight:700;font-size:11px;color:var(--ink);line-height:1.2;}
-.co-name{font-size:9.5px;color:var(--steel);font-weight:600;}
-.period-tag{position:absolute;top:10px;right:11px;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);}
-.kpi-row{display:flex;gap:5px;margin:6px 0;flex-wrap:wrap;}
+.logo-box.arvac-box{background:linear-gradient(135deg,#145214,#2e8b2e);}
+.role-title{font-weight:700;font-size:10.5px;color:var(--ink);line-height:1.2;}
+.co-name{font-size:9px;color:var(--steel);font-weight:600;}
+.period-tag{position:absolute;top:10px;right:11px;font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--muted);}
+.kpi-row{display:flex;gap:4px;margin:5px 0;flex-wrap:wrap;}
 .kpi-chip{background:var(--navy);color:var(--amber2);font-family:'Bebas Neue',sans-serif;font-size:10px;padding:3px 7px;border-radius:2px;letter-spacing:.04em;line-height:1.3;}
-.kpi-chip small{display:block;font-family:'DM Sans',sans-serif;font-size:7px;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.09em;font-weight:400;}
-.p2-cols{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
-.divider{border:none;border-top:1px solid rgba(0,0,0,.08);margin:8px 0;}
-.sig-table{width:100%;border-collapse:collapse;}
-.sig-table th{background:var(--navy);color:var(--amber2);font-family:'JetBrains Mono',monospace;font-size:7.5px;text-transform:uppercase;letter-spacing:.1em;padding:5px 8px;text-align:left;}
-.sig-table td{padding:4px 8px;border-bottom:1px solid rgba(0,0,0,.06);color:var(--ink);line-height:1.45;vertical-align:top;font-size:8.5px;}
-.sig-table tr:nth-child(even) td{background:rgba(255,255,255,.5);}
-.sig-table td strong{color:var(--ink);font-weight:700;}
+.kpi-chip small{display:block;font-family:'DM Sans',sans-serif;font-size:6.5px;color:rgba(255,255,255,.42);text-transform:uppercase;letter-spacing:.09em;font-weight:400;}
+.divider{border:none;border-top:1px solid rgba(0,0,0,.08);margin:7px 0;}
+
+/* RESPONSIBILITY TABLE */
+.resp-table{width:100%;border-collapse:collapse;margin-bottom:9px;}
+.resp-table th{background:var(--navy);color:var(--amber2);font-family:'JetBrains Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.1em;padding:5px 8px;text-align:left;}
+.resp-table td{padding:4px 8px;border-bottom:1px solid rgba(0,0,0,.055);color:var(--ink);line-height:1.4;vertical-align:top;font-size:8px;}
+.resp-table tr:nth-child(even) td{background:rgba(255,255,255,.5);}
+.resp-table td strong{color:var(--ink);font-weight:700;}
+.resp-table td .icon-cell{font-size:9px;margin-right:2px;}
+
+/* PROJECT TABLE */
+.proj-table{width:100%;border-collapse:collapse;margin-bottom:8px;}
+.proj-table th{background:var(--navy);color:var(--amber2);font-family:'JetBrains Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.1em;padding:4px 7px;text-align:left;}
+.proj-table td{padding:3px 7px;border-bottom:1px solid rgba(0,0,0,.055);font-size:7.5px;color:var(--ink);vertical-align:top;line-height:1.4;}
+.proj-table tr:nth-child(even) td{background:rgba(255,255,255,.45);}
+.loc-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:6.5px;padding:1px 5px;border-radius:2px;background:rgba(30,111,160,.12);color:var(--steel);border:1px solid rgba(30,111,160,.22);margin-right:2px;}
 
 /* CAREER TIMELINE */
-.timeline-viz{background:var(--ink2);border-radius:6px;padding:13px 16px 11px;margin-top:auto;position:relative;overflow:hidden;flex-shrink:0;border:1px solid rgba(184,134,11,.15);}
+.timeline-viz{background:var(--ink2);border-radius:6px;padding:12px 15px 10px;margin-top:auto;position:relative;overflow:hidden;flex-shrink:0;border:1px solid rgba(184,134,11,.15);}
 .timeline-viz::before{content:'';position:absolute;top:-60px;left:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.12) 0%,transparent 70%);pointer-events:none;}
-.timeline-viz::after{content:'';position:absolute;bottom:-50px;right:-50px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(42,122,154,.1) 0%,transparent 70%);pointer-events:none;}
-.timeline-title{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--amber2);text-transform:uppercase;letter-spacing:.25em;margin-bottom:12px;display:flex;align-items:center;gap:9px;}
+.timeline-title{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--amber2);text-transform:uppercase;letter-spacing:.25em;margin-bottom:11px;display:flex;align-items:center;gap:9px;}
 .timeline-title::before{content:'';width:18px;height:2px;background:var(--amber2);}
 .timeline-title::after{content:'';flex:1;height:1px;background:rgba(184,134,11,.2);}
 .timeline-path{display:flex;align-items:stretch;position:relative;z-index:2;}
-.timeline-path::before{content:'';position:absolute;top:26px;left:40px;right:40px;height:2px;background:linear-gradient(90deg,var(--amber2),var(--steel2),var(--plum2),var(--forest2),var(--amber2));z-index:0;}
+.timeline-path::before{content:'';position:absolute;top:24px;left:40px;right:40px;height:2px;background:linear-gradient(90deg,var(--amber2),var(--steel2),var(--teal2),var(--forest2),var(--amber2));z-index:0;}
 .timeline-node{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;}
-.timeline-year{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--amber2);line-height:1;background:var(--ink2);padding:0 4px;position:relative;z-index:2;}
-.timeline-node::before{content:'';width:10px;height:10px;border-radius:50%;background:var(--amber2);border:2px solid var(--ink2);box-shadow:0 0 0 2px var(--amber2);margin:3px 0;flex-shrink:0;}
-.timeline-label{font-size:8px;color:rgba(255,255,255,.62);text-align:center;line-height:1.4;margin-top:4px;}
-.timeline-label strong{display:block;color:var(--steel2);font-size:7.5px;font-family:'JetBrains Mono',monospace;margin-bottom:1px;letter-spacing:.06em;}
-.timeline-arrow{display:flex;align-items:center;padding:0 4px;padding-top:16px;color:rgba(184,134,11,.5);font-size:11px;flex-shrink:0;}
+.timeline-year{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--amber2);line-height:1;background:var(--ink2);padding:0 4px;position:relative;z-index:2;}
+.timeline-node::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--amber2);border:2px solid var(--ink2);box-shadow:0 0 0 2px var(--amber2);margin:3px 0;flex-shrink:0;}
+.timeline-label{font-size:7.5px;color:rgba(255,255,255,.62);text-align:center;line-height:1.4;margin-top:3px;}
+.timeline-label strong{display:block;color:var(--steel2);font-size:7px;font-family:'JetBrains Mono',monospace;margin-bottom:1px;letter-spacing:.06em;}
+.timeline-arrow{display:flex;align-items:center;padding:0 4px;padding-top:15px;color:rgba(184,134,11,.5);font-size:11px;flex-shrink:0;}
 
 /* ════ PAGE 3 ════ */
-.p3-kpi-strip{background:linear-gradient(135deg,#0f2a4a 0%,#081520 100%);padding:16px 20px 14px;flex-shrink:0;z-index:1;position:relative;overflow:hidden;}
+.p3-kpi-strip{background:linear-gradient(135deg,#0f2a4a 0%,#081520 100%);padding:15px 20px 13px;flex-shrink:0;z-index:1;position:relative;overflow:hidden;}
 .p3-kpi-strip::before{content:'';position:absolute;top:-80px;left:-70px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.16) 0%,transparent 65%);pointer-events:none;}
-.p3-kpi-strip::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--amber),var(--steel2),var(--plum2),var(--forest2),var(--amber2));}
-.p3-kpi-strip-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;position:relative;z-index:2;}
-.p3-kpi{text-align:center;padding:10px 6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:5px;border-top:2px solid var(--amber2);position:relative;}
+.p3-kpi-strip::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--amber),var(--steel2),var(--teal2),var(--forest2),var(--amber2));}
+.p3-kpi-strip-inner{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;position:relative;z-index:2;}
+.p3-kpi{text-align:center;padding:9px 5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:5px;border-top:2px solid var(--amber2);}
 .p3-kpi:nth-child(2){border-top-color:var(--steel2);}
-.p3-kpi:nth-child(3){border-top-color:var(--plum2);}
+.p3-kpi:nth-child(3){border-top-color:var(--teal2);}
 .p3-kpi:nth-child(4){border-top-color:var(--forest2);}
-.p3-kpi:nth-child(5){border-top-color:var(--ruby2);}
-.p3-kpi .pn{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--amber2);line-height:1;letter-spacing:.03em;}
+.p3-kpi:nth-child(5){border-top-color:var(--plum2);}
+.p3-kpi:nth-child(6){border-top-color:var(--ruby2);}
+.p3-kpi .pn{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--amber2);line-height:1;letter-spacing:.03em;}
 .p3-kpi:nth-child(2) .pn{color:var(--steel2);}
-.p3-kpi:nth-child(3) .pn{color:var(--plum2);}
+.p3-kpi:nth-child(3) .pn{color:var(--teal2);}
 .p3-kpi:nth-child(4) .pn{color:var(--forest2);}
-.p3-kpi:nth-child(5) .pn{color:var(--ruby2);}
-.p3-kpi .pl{font-family:'JetBrains Mono',monospace;font-size:6.5px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.14em;margin-top:4px;}
-.p3-kpi .ps{font-size:8px;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.35;}
+.p3-kpi:nth-child(5) .pn{color:var(--plum2);}
+.p3-kpi:nth-child(6) .pn{color:var(--ruby2);}
+.p3-kpi .pl{font-family:'JetBrains Mono',monospace;font-size:6px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.12em;margin-top:3px;}
+.p3-kpi .ps{font-size:7.5px;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.3;}
 
-.p3-body{padding:13px 21px;position:relative;z-index:1;flex:1;display:flex;flex-direction:column;}
+.p3-body{padding:12px 20px;position:relative;z-index:1;flex:1;display:flex;flex-direction:column;}
 
-.p3-skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:16px;}
+/* SKILLS — 3-column grid for procurement-focused layout */
+.p3-skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:13px;}
 .p3-sk{border-radius:5px;padding:9px;position:relative;overflow:hidden;border:1.5px solid;}
 .p3-sk:nth-child(1){background:#fdfaf2;border-color:rgba(184,134,11,.35);border-top:3px solid var(--amber2);}
-.p3-sk:nth-child(2){background:#f0f8fd;border-color:rgba(42,122,154,.25);border-top:3px solid var(--steel2);}
-.p3-sk:nth-child(3){background:#f8f2ff;border-color:rgba(92,42,122,.22);border-top:3px solid var(--plum2);}
-.p3-sk:nth-child(4){background:#f0fff4;border-color:rgba(22,101,52,.22);border-top:3px solid var(--forest2);}
-.p3-sk h4{font-family:'JetBrains Mono',monospace;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:9px;}
+.p3-sk:nth-child(2){background:#f0f8fd;border-color:rgba(30,111,160,.25);border-top:3px solid var(--steel2);}
+.p3-sk:nth-child(3){background:#f2fff8;border-color:rgba(22,101,52,.22);border-top:3px solid var(--forest2);}
+.p3-sk h4{font-family:'JetBrains Mono',monospace;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;}
 .p3-sk:nth-child(1) h4{color:var(--amber);}
 .p3-sk:nth-child(2) h4{color:var(--steel);}
-.p3-sk:nth-child(3) h4{color:var(--plum);}
-.p3-sk:nth-child(4) h4{color:var(--forest);}
+.p3-sk:nth-child(3) h4{color:var(--forest);}
 .p3-sk .tags{display:flex;flex-wrap:wrap;gap:3px;}
-.p3-sk:nth-child(1) .tags span{font-size:7.5px;padding:2px 5px;border-radius:10px;background:rgba(184,134,11,.1);color:#7a5c1e;border:1px solid rgba(184,134,11,.2);}
-.p3-sk:nth-child(2) .tags span{font-size:7.5px;padding:2px 5px;border-radius:10px;background:rgba(42,122,154,.1);color:var(--steel);border:1px solid rgba(42,122,154,.2);}
-.p3-sk:nth-child(3) .tags span{font-size:7.5px;padding:2px 5px;border-radius:10px;background:rgba(92,42,122,.09);color:var(--plum);border:1px solid rgba(92,42,122,.2);}
-.p3-sk:nth-child(4) .tags span{font-size:7.5px;padding:2px 5px;border-radius:10px;background:rgba(22,101,52,.09);color:var(--forest);border:1px solid rgba(22,101,52,.18);}
+.p3-sk:nth-child(1) .tags span{font-size:7.5px;padding:2px 6px;border-radius:10px;background:rgba(184,134,11,.1);color:#7a5c1e;border:1px solid rgba(184,134,11,.2);}
+.p3-sk:nth-child(2) .tags span{font-size:7.5px;padding:2px 6px;border-radius:10px;background:rgba(30,111,160,.09);color:var(--steel);border:1px solid rgba(30,111,160,.2);}
+.p3-sk:nth-child(3) .tags span{font-size:7.5px;padding:2px 6px;border-radius:10px;background:rgba(22,101,52,.08);color:var(--forest);border:1px solid rgba(22,101,52,.18);}
 
-.achieve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px;}
+.achieve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:12px;}
 .ach-card{background:#fff;border:1px solid var(--paper2);border-radius:5px;padding:9px 11px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
 .ach-card:nth-child(1){border-left:3px solid var(--amber2);}
 .ach-card:nth-child(2){border-left:3px solid var(--steel);}
-.ach-card:nth-child(3){border-left:3px solid var(--plum);}
+.ach-card:nth-child(3){border-left:3px solid var(--teal);}
 .ach-card:nth-child(4){border-left:3px solid var(--forest);}
-.ach-card:nth-child(5){border-left:3px solid var(--ruby);}
-.ach-card:nth-child(6){border-left:3px solid var(--navy);}
+.ach-card:nth-child(5){border-left:3px solid var(--plum);}
+.ach-card:nth-child(6){border-left:3px solid var(--ruby);}
 .ach-card::before{content:attr(data-icon);position:absolute;top:6px;right:8px;font-size:18px;opacity:.14;}
-.ach-num{font-family:'Bebas Neue',sans-serif;font-size:21px;line-height:1;margin-bottom:2px;}
+.ach-num{font-family:'Bebas Neue',sans-serif;font-size:20px;line-height:1;margin-bottom:2px;}
 .ach-card:nth-child(1) .ach-num{color:var(--amber2);}
 .ach-card:nth-child(2) .ach-num{color:var(--steel);}
-.ach-card:nth-child(3) .ach-num{color:var(--plum);}
+.ach-card:nth-child(3) .ach-num{color:var(--teal);}
 .ach-card:nth-child(4) .ach-num{color:var(--forest);}
-.ach-card:nth-child(5) .ach-num{color:var(--ruby);}
-.ach-card:nth-child(6) .ach-num{color:var(--navy);}
-.ach-card h5{font-size:9px;font-weight:700;color:var(--ink);margin-bottom:2px;line-height:1.3;}
-.ach-card p{font-size:8px;color:var(--muted);line-height:1.45;}
+.ach-card:nth-child(5) .ach-num{color:var(--plum);}
+.ach-card:nth-child(6) .ach-num{color:var(--ruby);}
+.ach-card h5{font-size:8.5px;font-weight:700;color:var(--ink);margin-bottom:2px;line-height:1.3;}
+.ach-card p{font-size:7.5px;color:var(--muted);line-height:1.45;}
 
-.cert-cloud{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
-.cert-pill{font-family:'DM Sans',sans-serif;font-size:8px;padding:3px 10px;border-radius:20px;line-height:1.3;white-space:nowrap;border:1.5px solid;cursor:default;}
+.cert-cloud{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
+.cert-pill{font-family:'DM Sans',sans-serif;font-size:7.5px;padding:3px 9px;border-radius:20px;line-height:1.3;white-space:nowrap;border:1.5px solid;cursor:default;}
 .cert-pill.t1{background:var(--navy);color:var(--amber3);border-color:var(--navy);}
-.cert-pill.t2{background:rgba(42,122,154,.08);color:var(--steel);border-color:var(--steel);}
+.cert-pill.t2{background:rgba(30,111,160,.08);color:var(--steel);border-color:var(--steel);}
 .cert-pill.t3{background:var(--paper2);color:var(--ink);border-color:rgba(0,0,0,.15);}
 
 .community-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:8px;}
 .community-card{border-radius:5px;padding:9px 11px;display:flex;gap:9px;align-items:flex-start;border:1.5px solid;}
 .community-card:nth-child(1){background:#fdfaf2;border-color:rgba(184,134,11,.3);border-left:4px solid var(--amber2);}
-.community-card:nth-child(2){background:#f0f8fd;border-color:rgba(42,122,154,.25);border-left:4px solid var(--steel2);}
+.community-card:nth-child(2){background:#f0f8fd;border-color:rgba(30,111,160,.25);border-left:4px solid var(--steel2);}
 .community-card:nth-child(3){background:#fff0f4;border-color:rgba(154,28,42,.2);border-left:4px solid var(--ruby);}
-.community-card:nth-child(4){background:#f8f0ff;border-color:rgba(92,42,122,.2);border-left:4px solid var(--plum);}
+.community-card:nth-child(4){background:#f2fff8;border-color:rgba(22,101,52,.2);border-left:4px solid var(--forest);}
 .community-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
-.community-card h6{font-size:9px;font-weight:700;margin-bottom:2px;}
+.community-card h6{font-size:8.5px;font-weight:700;margin-bottom:2px;}
 .community-card:nth-child(1) h6{color:var(--amber);}
 .community-card:nth-child(2) h6{color:var(--steel);}
 .community-card:nth-child(3) h6{color:var(--ruby);}
-.community-card:nth-child(4) h6{color:var(--plum);}
-.community-card p{font-size:8px;color:var(--muted);line-height:1.45;}
+.community-card:nth-child(4) h6{color:var(--forest);}
+.community-card p{font-size:7.5px;color:var(--muted);line-height:1.45;}
 
-.quote-finale{background:linear-gradient(135deg,#081520 0%,#0f2a4a 100%);position:relative;overflow:hidden;flex-shrink:0;padding:14px 24px;display:flex;align-items:center;gap:16px;margin-top:auto;}
-.quote-finale::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--amber2),var(--steel2),var(--plum2));}
-.quote-finale::after{content:'';position:absolute;right:-50px;top:-50px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(184,134,11,.08) 0%,transparent 70%);pointer-events:none;}
-.qf-big{font-family:'Bebas Neue',sans-serif;font-size:72px;color:rgba(184,134,11,.14);line-height:1;flex-shrink:0;}
+.quote-finale{background:linear-gradient(135deg,#081520 0%,#0f2a4a 100%);position:relative;overflow:hidden;flex-shrink:0;padding:13px 24px;display:flex;align-items:center;gap:16px;margin-top:auto;}
+.quote-finale::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--amber2),var(--steel2),var(--teal2));}
+.qf-big{font-family:'Bebas Neue',sans-serif;font-size:66px;color:rgba(184,134,11,.14);line-height:1;flex-shrink:0;}
 .qf-text{flex:1;position:relative;z-index:2;}
-.qf-text p{font-size:10px;color:rgba(255,255,255,.65);font-style:italic;line-height:1.72;}
+.qf-text p{font-size:9.5px;color:rgba(255,255,255,.65);font-style:italic;line-height:1.7;}
 .qf-text p strong{color:var(--amber2);font-style:normal;}
-.qf-sig{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--steel2);margin-top:6px;letter-spacing:.1em;}
+.qf-sig{font-family:'JetBrains Mono',monospace;font-size:7.5px;color:var(--steel2);margin-top:5px;letter-spacing:.1em;}
 
 @media print{body{background:white;}.page{box-shadow:none;margin:0;}.dl-bar{display:none!important;}.pages-wrapper{padding:0;}}
 </style>
@@ -273,7 +286,7 @@ a{color:inherit;text-decoration:none;}
 <body>
 
 <div class="dl-bar">
-  <span>Sushil Jhabak — Senior Manager, Procurement &amp; Finance</span>
+  <span>Sushil Jhabak — Senior General Manager, Procurement &amp; Supply Chain</span>
   <button class="dl-btn" id="dlBtn" onclick="downloadPDF()">⬇ Download PDF — Ultra Quality A4</button>
 </div>
 
@@ -282,36 +295,37 @@ a{color:inherit;text-decoration:none;}
 <!-- ══════════════ PAGE 1 ══════════════ -->
 <div class="page" id="p1">
   <header class="hero">
-    <div class="hero-stripe"></div>
-    <div class="hero-stripe2"></div>
-    <div class="hero-stripe3"></div>
+    <div class="hero-stripe"></div><div class="hero-stripe2"></div><div class="hero-stripe3"></div>
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-monogram">
-          <div class="initials">SJ</div>
-          <div class="mono-sub">Sr. Manager</div>
-        </div>
+        <img class="hero-photo"
+          src="https://media.licdn.com/dms/image/v2/D5603AQEclfWFRySnuA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1730047136175?e=1775088000&v=beta&t=CBm1fHvK89xW1453CUMo6KePJgMox3H3kAipCgaxme8"
+          alt="Sushil Jhabak" crossorigin="anonymous"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="hero-photo-fallback" style="display:none;"><div class="initials">SJ</div><div class="mono-sub">Sr. GM</div></div>
         <div class="hero-text">
-          <div class="hero-badge">19+ Yrs · Procurement &amp; Finance · SAP Expert</div>
+          <div class="hero-badge">19+ Yrs · Procurement &amp; SCM · SAP S/4HANA · Manufacturing</div>
           <div class="hero-name">SUSHIL<span> JHABAK</span></div>
           <div class="hero-title-block">
             <div class="hero-title-row1">
-              <span class="t-seg amber">Procurement &amp; SCM</span><span class="t-div">|</span>
-              <span class="t-seg steel">Inventory Control</span><span class="t-div">|</span>
-              <span class="t-seg forest">Finance &amp; R2R</span>
+              <span class="t-seg amber">Strategic Procurement</span><span class="t-div">|</span>
+              <span class="t-seg steel">Supply Chain Optimization</span><span class="t-div">|</span>
+              <span class="t-seg forest">Inventory Management</span>
             </div>
             <div class="hero-title-row2">
               <span class="t-seg steel">SAP FICO &amp; MM</span><span class="t-div">|</span>
-              <span class="t-seg plum">FP&amp;A · Controllership</span><span class="t-div">|</span>
-              <span class="t-seg amber">Power BI · AI</span>
+              <span class="t-seg teal">Contract Negotiation</span><span class="t-div">|</span>
+              <span class="t-seg plum">Digital Transformation</span><span class="t-div">|</span>
+              <span class="t-seg amber">ESG · ISO</span>
             </div>
           </div>
         </div>
       </div>
       <div class="hero-stats">
         <div class="stat-pill"><div class="num">19+ Yrs</div><div class="lbl">Domain Expertise</div></div>
-        <div class="stat-pill"><div class="num">Electrosteel</div><div class="lbl">Senior Manager · Mfg</div></div>
-        <div class="stat-pill"><div class="num">SAP+BI</div><div class="lbl">Tech-Driven Leader</div></div>
+        <div class="stat-pill"><div class="num">35+ Team</div><div class="lbl">Members Led</div></div>
+        <div class="stat-pill"><div class="num">~20%</div><div class="lbl">Efficiency via SAP S/4HANA</div></div>
+        <div class="stat-pill"><div class="num">SGM</div><div class="lbl">Electrosteel Castings Ltd</div></div>
       </div>
     </div>
   </header>
@@ -321,7 +335,8 @@ a{color:inherit;text-decoration:none;}
     <div class="contact-item"><span class="icon">✉</span>sushiljhabak@gmail.com</div>
     <div class="contact-item"><span class="icon">📞</span>+91 9748666269</div>
     <div class="contact-item"><span class="icon">in</span><a href="https://linkedin.com/in/sushiljhabak">linkedin.com/in/sushiljhabak</a></div>
-    <div class="contact-item"><span class="icon">✍</span>I-Factor Digest</div>
+    <div class="contact-item"><span class="icon">🗣</span>English · Hindi · Bengali</div>
+    <div class="contact-item"><span class="icon">🇮🇳</span>Indian · DOB: 29 Jun 1983</div>
   </div>
 
   <div class="body-grid">
@@ -329,45 +344,69 @@ a{color:inherit;text-decoration:none;}
       <div class="s-section">
         <div class="s-heading">Education</div>
         <div class="edu-item"><div class="deg">MBA — Finance <span class="inline-badge">65.5%</span></div><div class="school">Sikkim Manipal University</div><div class="year">2010 – 2012</div></div>
-        <div class="edu-item"><div class="deg">B.Com</div><div class="school">University of Calcutta</div><div class="year">2002 – 2005 · 42.3%</div></div>
-        <div class="edu-item"><div class="deg">Higher Secondary (WBCHSE)</div><div class="school">Shree Jain Vidyalaya</div><div class="year">2002 · 62.1%</div></div>
-        <div class="edu-item"><div class="deg">Secondary (Madhyamik)</div><div class="school">WBBSE · Shree Jain Vidyalaya</div><div class="year">2000 · 59.0%</div></div>
-        <div class="edu-item"><div class="deg">Diploma — Software Applications</div><div class="school">RCPA · IIHT Hardware Engg.</div><div class="year">2005 – 2006</div></div>
+        <div class="edu-item"><div class="deg">B.Com</div><div class="school">University of Calcutta</div><div class="year">2002 – 2005</div></div>
+        <div class="edu-item"><div class="deg">Diploma — Software Applications</div><div class="school">Rastriya Computer Prasikshan Abhiyan</div><div class="year">2004</div></div>
+        <div class="edu-item"><div class="deg">Computer Hardware Engg.</div><div class="school">IIHT</div><div class="year">Jun – Nov 2005</div></div>
+        <div class="edu-item"><div class="deg">Higher Secondary · WBCHSE</div><div class="school">Shree Jain Vidyalaya</div><div class="year">2002 · 62.1%</div></div>
+        <div class="edu-item"><div class="deg">Madhyamik · WBBSE</div><div class="school">Shree Jain Vidyalaya</div><div class="year">2000 · 59.0%</div></div>
       </div>
+
       <div class="s-section">
         <div class="s-heading">Core Competency</div>
-        <div class="skill-row"><div class="skill-label"><span>Procurement / SCM</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:97%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>SAP FICO &amp; MM</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Inventory Management</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Finance / R2R / FP&amp;A</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Taxation &amp; Compliance</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Power BI / Analytics</span><span>Proficient</span></div><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div></div>
-        <div class="skill-row"><div class="skill-label"><span>Team Leadership</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Strategic Procurement</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:97%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>SAP MM / FICO / S4</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Inventory &amp; Store Mgmt</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Supply Chain Optimization</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:93%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Contract Negotiation</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:91%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Vendor Management</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:94%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Team Leadership (35+)</span><span>Expert</span></div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div></div>
+        <div class="skill-row"><div class="skill-label"><span>Financial &amp; Compliance</span><span>Advanced</span></div><div class="bar-track"><div class="bar-fill" style="width:87%"></div></div></div>
       </div>
+
       <div class="s-section">
         <div class="s-heading">Tech Stack</div>
         <div class="tech-wrap">
-          <span class="tech-tag amber">SAP FICO</span><span class="tech-tag amber">SAP MM</span>
-          <span class="tech-tag hi">Power BI</span><span class="tech-tag hi">Alteryx</span>
-          <span class="tech-tag hi">SAP BW/BPC</span>
+          <span class="tech-tag amber">SAP S/4HANA</span><span class="tech-tag amber">SAP MM</span><span class="tech-tag amber">SAP FICO</span>
+          <span class="tech-tag hi">SAP Fiori</span><span class="tech-tag hi">SAP BW/BPC</span>
+          <span class="tech-tag hi">Power BI</span><span class="tech-tag">M-Junction</span>
           <span class="tech-tag">Oracle</span><span class="tech-tag">Tally</span><span class="tech-tag">Quick ERP</span>
-          <span class="tech-tag">MS Excel</span><span class="tech-tag">ACE</span><span class="tech-tag">AI Tools</span>
-          <span class="tech-tag">FoxPro</span><span class="tech-tag">QuickBooks</span>
+          <span class="tech-tag">MS Excel</span><span class="tech-tag">AI Tools</span><span class="tech-tag">Python</span><span class="tech-tag">IoT</span>
         </div>
       </div>
+
+      <div class="s-section">
+        <div class="s-heading">ISO &amp; Standards</div>
+        <div class="tech-wrap">
+          <span class="tech-tag amber">ISO 9001:2015</span>
+          <span class="tech-tag hi">ISO 14001:2015</span>
+          <span class="tech-tag hi">ISO 45001:2018</span>
+          <span class="tech-tag">SA 8001</span>
+          <span class="tech-tag">5S / TPM</span>
+          <span class="tech-tag">Kaizen (KK)</span>
+          <span class="tech-tag amber">ESG</span>
+        </div>
+      </div>
+
       <div class="s-section">
         <div class="s-heading">Awards &amp; Honours</div>
-        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>Rank 1 — B.Com Batch</strong>Overall 4th in college · Calcutta</div></div>
-        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>4× Accenture Townhall Awards</strong>Client Value Creation · FP&amp;A</div></div>
-        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>2× Accenture Encore Awards</strong>Core Value Champion</div></div>
-        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>60-Day Challenge Winner</strong>EQ-FO Champion · Feb 2021</div></div>
-        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>LinkedIn Top News Feature</strong>I-Factor Digest</div></div>
+        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>Silver Medal — ECL Jamboree</strong>Runner Up Team · Tollygunge Club · 2023-24</div></div>
+        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>Performance Improvement Award</strong>Pipe Mould &amp; Imported Goods Optimization</div></div>
+        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>MS Excel Champion — ECL</strong>Basic to Advanced · Jun 2025</div></div>
+        <div class="award-item"><div class="award-dot"></div><div class="award-text"><strong>First Aid Senior Professional</strong>St. John Ambulance / Red Cross · 2015</div></div>
+      </div>
+
+      <div class="s-section">
+        <div class="s-heading">Personal Snapshot</div>
+        <div class="personal-item"><span class="pi-icon">🎂</span><span>29 June 1983 · <strong>Married</strong></span></div>
+        <div class="personal-item"><span class="pi-icon">👤</span><span>Father: <strong>Subh Karan Jhabak</strong></span></div>
+        <div class="personal-item"><span class="pi-icon">🌐</span><span>Indian · <strong>Male</strong></span></div>
+        <div class="personal-item"><span class="pi-icon">🗣</span><span>English · Hindi · Bengali</span></div>
       </div>
     </aside>
 
     <main class="main">
       <div class="summary-block">
-        <p>A <strong>results-driven professional with 19+ years</strong> of deep expertise across <strong>procurement, store management, finance, and SAP-driven operations</strong> in manufacturing and services sectors. Proven track record at <strong>Electrosteel Casting Ltd</strong> (Senior Manager) and global MNCs, delivering high-impact strategies in <strong>end-to-end procurement, inventory control, R2R, FP&amp;A, SOX-compliant finance, and digital transformation</strong>. Technology-first mindset — leveraging <strong>SAP FICO/MM, Power BI, and AI tools</strong> to optimize supply chains and drive organizational excellence. Targeting <strong>Senior Leadership roles</strong> in Procurement, Finance, or Supply Chain.</p>
+        <p>Accomplished <strong>Senior General Manager — Procurement &amp; Supply Chain</strong> with <strong>19+ years</strong> at <strong>Electrosteel Castings Limited</strong>, India's premier manufacturer of ductile iron pipes. Expert in <strong>strategic sourcing, end-to-end procurement lifecycle, supply chain optimization, contract negotiation, and SAP S/4HANA-led digital transformation</strong>. Consistently delivered <strong>cost savings, inventory optimization, and ~20% efficiency improvements</strong> across multi-location operations. Led teams of <strong>35+ members</strong> and spearheaded major capital projects including blast furnace upgrades, coke oven plants, and sustainability initiatives. Known for <strong>data-driven decision making, ESG compliance, vendor governance</strong>, and operational excellence frameworks including ISO, TPM, 5S, and Kaizen.</p>
       </div>
 
       <div class="sec-head"><h2>CAREER TRAJECTORY</h2><div class="line"></div><div class="tag">2005 → Present</div></div>
@@ -376,27 +415,30 @@ a{color:inherit;text-decoration:none;}
       <div class="exp-card">
         <div class="exp-header">
           <div>
-            <div class="exp-role">Senior Manager — Material &amp; Procurement Department <span class="co-badge mfg">Manufacturing</span></div>
-            <div class="exp-company">Electrosteel Castings Ltd</div>
+            <div class="exp-role">Senior General Manager — Procurement &amp; Materials <span class="co-badge mfg">Manufacturing · NSE Listed</span></div>
+            <div class="exp-company">Electrosteel Castings Limited — Ductile Iron Pipes &amp; Fittings, Multi-location</div>
           </div>
           <div class="exp-period">Dec 2008 → Present · 16+ Yrs</div>
         </div>
         <div class="exp-kpi-row">
-          <div class="kpi-mini">SAP FICO<small>&amp; MM Expert</small></div>
-          <div class="kpi-mini">16+ Yrs<small>Tenure</small></div>
-          <div class="kpi-mini">End-to-End<small>Procurement</small></div>
-          <div class="kpi-mini">Power BI<small>Analytics</small></div>
-          <div class="kpi-mini">e-Waybill<small>Compliance</small></div>
+          <div class="kpi-mini">SGM<small>Since 2023</small></div>
+          <div class="kpi-mini">35+ Team<small>Members</small></div>
+          <div class="kpi-mini">~20%<small>Efficiency Gain</small></div>
+          <div class="kpi-mini">SAP S4<small>Led Rollout</small></div>
+          <div class="kpi-mini">340K TPA<small>Plant Scale</small></div>
+          <div class="kpi-mini">M-Junction<small>Auction Buying</small></div>
         </div>
         <ul class="exp-bullets">
-          <li>Own <strong>end-to-end procurement lifecycle</strong> — Purchase Order management, Contract creation, Work Order execution, and vendor management — delivering high-quality, cost-effective supply chain outcomes.</li>
-          <li>Drive <strong>SAP FICO &amp; MM mastery</strong>: comprehensive Material Master, Vendor Management, and Inventory Management ensuring accurate ERP database integrity at enterprise scale.</li>
-          <li>Manage <strong>inventory control and store operations</strong> across multiple warehouses with meticulous audit-ready documentation, FIFO/LIFO tracking, and stock reconciliation.</li>
-          <li>Expert in <strong>regulatory compliance and e-Waybill generation</strong>; maintain full GST compliance, TDS, and statutory filings including coordination with tax authorities.</li>
-          <li>Lead <strong>Bookkeeping, Payment Processing, and Bank Reconciliation</strong> workflows with zero-tolerance audit readiness and financial accuracy benchmarks.</li>
-          <li>Drive <strong>process optimization through strategic innovation</strong> — implemented technology-driven improvements reducing manual effort and increasing throughput across procurement and finance operations.</li>
-          <li>Mentor and develop cross-functional teams in <strong>SAP operations, procurement best practices</strong>, and compliance standards, building a high-performance operations culture.</li>
-          <li>Leverage <strong>Power BI, BW, BPC, and AI tools</strong> to generate actionable dashboards for senior leadership, enabling data-driven procurement and financial decisions.</li>
+          <li>Progressed from <strong>Purchase Officer → Senior Manager → Senior General Manager</strong> over 16+ years — a testament to consistent performance, strategic contribution, and institutional trust.</li>
+          <li>Own <strong>complete procurement lifecycle</strong>: Indent → Quotation → Vendor Evaluation → PO → Delivery → Vendor Payment across Khardah, Bansberia, Haldia, and South Works plants.</li>
+          <li>Led <strong>SAP S/4HANA rollout</strong> and auction-based procurement via <strong>M-Junction</strong>, achieving ~20% operational efficiency improvement and real-time inventory visibility.</li>
+          <li>Drive <strong>strategic sourcing, global sourcing, and supplier consolidation</strong> — directed high-value contract negotiations securing favourable, risk-mitigated, compliant terms.</li>
+          <li>Strategically manage <strong>inventory optimization</strong> — balance availability vs. cost, averting overstocking/stockouts; conduct ABC Analysis, Safety Stock Monitoring, Aging &amp; Shelf-Life Reports.</li>
+          <li>Lead and mentor <strong>team of 35+</strong> across procurement and store functions — promoting ownership culture, performance KPIs, and talent development frameworks.</li>
+          <li>Maintain full <strong>ISO 9001:2015, ISO 14001:2015, ISO 45001:2018, and SA 8001 compliance</strong>; champion 5S, TPM, and Kaizen continuous improvement across the materials department.</li>
+          <li>Spearhead <strong>ESG and sustainable sourcing practices</strong> — improved waste disposal/recycling processes for tin, drums, and gunny bags across all sites.</li>
+          <li>Generate <strong>comprehensive MIS reports</strong>: Inventory levels, ABC Analysis, Safety Stock, Rejection rates, Aging Reports, Cost Center Tracking, and Shelf-Life monitoring.</li>
+          <li>Oversee <strong>GST compliance, e-Waybill generation, TDS</strong>, and statutory filings for the procurement and store function with audit-ready documentation.</li>
         </ul>
       </div>
 
@@ -409,15 +451,9 @@ a{color:inherit;text-decoration:none;}
           </div>
           <div class="exp-period">Mar 2006 → Dec 2008</div>
         </div>
-        <div class="exp-kpi-row">
-          <div class="kpi-mini">Purchase<small>+ Accounts</small></div>
-          <div class="kpi-mini">Store Ops<small>End-to-End</small></div>
-          <div class="kpi-mini">Tally ERP<small>Proficiency</small></div>
-        </div>
         <ul class="exp-bullets">
-          <li>Managed <strong>dual responsibility</strong> as Accountant and Purchase/Store Keeper — handling full accounts finalization, purchase order processing, and inventory management simultaneously.</li>
-          <li>Maintained <strong>ledger accounts, journal entries, reconciliations</strong>, and statutory compliance; filed Direct &amp; Indirect Tax returns with full documentation trails.</li>
-          <li>Built foundational expertise in <strong>vendor management, material receipts, stock valuation, and cost controls</strong> that underpins all senior supply chain leadership roles.</li>
+          <li>Managed <strong>dual procurement and accounting responsibility</strong> — purchase orders, store operations, vendor management, full accounts finalization, and bank reconciliation simultaneously.</li>
+          <li>Built strong foundation in <strong>material costing, stock valuation, statutory compliance</strong> and ledger management underpinning all subsequent leadership roles.</li>
         </ul>
       </div>
 
@@ -431,8 +467,7 @@ a{color:inherit;text-decoration:none;}
           <div class="exp-period">Jun 2005 → Mar 2006</div>
         </div>
         <ul class="exp-bullets">
-          <li>Handled <strong>daily accounts, cash management, bank reconciliation</strong>, and financial reporting in a hospitality environment with high transaction velocity.</li>
-          <li>Gained cross-sector exposure in <strong>accounts payable/receivable, payroll processing</strong>, and audit-ready documentation from career inception.</li>
+          <li>Handled <strong>daily accounts, bank reconciliation, accounts payable/receivable</strong>, and financial reporting — early multi-sector exposure building a strong finance foundation.</li>
         </ul>
       </div>
     </main>
@@ -444,138 +479,84 @@ a{color:inherit;text-decoration:none;}
 <div class="page" id="p2">
   <div class="page-header">
     <div class="ph-name">SUSHIL <span>JHABAK</span></div>
-    <div class="ph-section">Finance Leadership · FP&amp;A · Audit Assignments</div>
+    <div class="ph-section">Key Responsibilities · Projects · Infrastructure</div>
     <div class="ph-pg">Page 2 / 3</div>
   </div>
   <div class="p2-body">
 
-    <!-- Accenture / Serco -->
-    <div class="exp-card-full">
-      <div class="company-logo-area">
-        <div class="logo-box mfg-box"><span>ACC</span><span class="logo-label">MNC</span></div>
-        <div>
-          <div class="role-title">Associate Operations Manager — Senior AFBP, FP&amp;A + R2R <span class="co-badge mfg">Global MNC</span></div>
-          <div class="co-name">Accenture <span style="color:var(--muted);font-size:9px;font-weight:400">· UK-Based Client Engagement</span></div>
-        </div>
-      </div>
-      <div class="period-tag">FP&amp;A / R2R Role</div>
-      <div class="kpi-row">
-        <div class="kpi-chip">6×<small>Awards Won</small></div>
-        <div class="kpi-chip">WD3<small>Monthly Close</small></div>
-        <div class="kpi-chip">FP&amp;A<small>UK Client Lead</small></div>
-        <div class="kpi-chip">SAP<small>OSI Team</small></div>
-        <div class="kpi-chip">Zero-Based<small>Budgeting</small></div>
-      </div>
-      <ul class="exp-bullets">
-        <li>Senior AFBP for UK-based client; led <strong>end-to-end FP&amp;A</strong> — zero-based budgeting, rolling forecasting, monthly close, variance analysis, and executive performance reporting.</li>
-        <li>Led <strong>Acceleration Centers Manager (L-2), Operational Strategy Initiatives, One India Finance</strong> — analyzed key drivers behind financial variances and movements at all-India AC center level.</li>
-        <li>Finalized <strong>financial statements for all India AC centres</strong>, ensuring accuracy and full compliance with regulatory standards; prepared future-outlook presentation decks for executive decision-making.</li>
-        <li>Led month-end close including <strong>complex journal entries, accruals, provisions, reconciliations</strong>; closed results by WD3 with full audit readiness and SOX-compliant controls.</li>
-        <li>Participated in <strong>SAP system implementation as part of the OSI team</strong> — contributed to module testing, data migration validation, and go-live support.</li>
-        <li>Identified optimization opportunities to <strong>decrease OPEX and increase client value</strong>; flagged risks to Accenture and client stakeholders with timely onshore collaboration.</li>
-        <li>Recognized with <strong>4× Townhall Awards</strong> (Client Value Creation: Feb-22, Aug-22, May-23, Sep-23) and <strong>2× Encore Core Value Champion Awards</strong>.</li>
-      </ul>
-    </div>
-
-    <!-- CAPEXIL / Government -->
-    <div class="exp-card-full">
-      <div class="company-logo-area">
-        <div class="logo-box ca-box"><span>CAP</span><span class="logo-label">GOV·IN</span></div>
-        <div>
-          <div class="role-title">Head of Accounts — Joint Director (Promoted within 1 Year) <span class="co-badge" style="background:rgba(184,134,11,.14);border:1px solid rgba(184,134,11,.38);color:var(--amber2);">Govt. of India</span></div>
-          <div class="co-name">CAPEXIL — Export Promotion Council, Ministry of Commerce &amp; Industry, Govt. of India</div>
-        </div>
-      </div>
-      <div class="period-tag">7 Yr Statutory Sign-off</div>
-      <div class="kpi-row">
-        <div class="kpi-chip">7 Yrs<small>Statutory Fin.</small></div>
-        <div class="kpi-chip">3 MoUs<small>International</small></div>
-        <div class="kpi-chip">1 Yr<small>Promoted JD</small></div>
-        <div class="kpi-chip">1200+<small>HS Codes</small></div>
-        <div class="kpi-chip">Digital India<small>Platform</small></div>
-      </div>
-      <ul class="exp-bullets">
-        <li><strong>Finalized Financial Statements for seven consecutive years</strong> as sole finance head with full R2R, PTP, OTC, FP&amp;A, Taxation, Statutory Audit, and Regulatory Compliance ownership.</li>
-        <li>Spearheaded <strong>budget preparation under MDA &amp; MAI Schemes</strong>; submitted Utilization Certificates to the Ministry of Commerce with monthly planning and consolidations commentary.</li>
-        <li>Ensured comprehensive statutory compliance: <strong>GST implementation, ROC filings, Direct &amp; Indirect Taxation, and legal matters</strong> in coordination with government authorities.</li>
-        <li>Drove <strong>Digital India transformation</strong> — implemented online membership management and certificate issuance platform; conducted addressing membership issues through digitized systems.</li>
-        <li>Supervised preparation of <strong>statistical intelligence across 1,200+ ITC HS codes</strong> — export-import data furnished to Department of Commerce, Industry Associations, and Councils.</li>
-        <li>Orchestrated signing of <strong>3 international MoUs</strong> at Source India Show, Nigeria — NACCIMA, Lagos Chamber of Commerce &amp; Industry, and Indian Professionals Forum.</li>
-        <li><strong>Promoted to Joint Director within one year</strong> — reflecting exceptional institutional trust and delivery in a Government of India body.</li>
-      </ul>
-    </div>
-
-    <hr class="divider">
-
-    <div class="sec-head" style="margin-top:2px"><h2>SIGNATURE AUDIT ASSIGNMENTS — CA Firm Experience</h2><div class="line"></div></div>
-
-    <div class="p2-cols">
-      <div class="exp-card-full" style="margin-bottom:0;">
-        <div class="company-logo-area">
-          <div class="logo-box ca-box"><span>RKP</span><span class="logo-label">CA FIRM</span></div>
-          <div><div class="role-title">Senior Audit Assistant</div><div class="co-name">R. K. Patodi &amp; Co., Chartered Accountants</div></div>
-        </div>
-        <div class="period-tag">May 2011 – Oct 2013</div>
-        <ul class="exp-bullets">
-          <li>Executed <strong>statutory, tax, internal, stock &amp; insurance audits</strong> for WBHIDCO, Saboo Computers, Burnie Braes &amp; Borojalingah Tea, EEPC India (8 offices), SHEFXIL, National Insurance Co.</li>
-          <li>Full <strong>CARO reporting</strong>; Advisory on Finance, Taxation, RoC matters; filed Direct &amp; Indirect Tax, TDS, Service Tax returns.</li>
-        </ul>
-      </div>
-      <div class="exp-card-full" style="margin-bottom:0;">
-        <div class="company-logo-area">
-          <div class="logo-box ca2-box"><span>LNT</span><span class="logo-label">CA FIRM</span></div>
-          <div><div class="role-title">Article Assistant</div><div class="co-name">L. N. Todi &amp; Co., Chartered Accountants</div></div>
-        </div>
-        <div class="period-tag">Oct 2007 – Apr 2011</div>
-        <ul class="exp-bullets">
-          <li>Built deep foundation in <strong>accounts finalization, controls, compliance, risk management</strong> across multiple sectors; finalized accounts for Chhabra Ispat, Forum Infrastructure (Mall), Equus Pictures.</li>
-          <li>Gained proficiency in <strong>audit methodology, internal control testing</strong>, and statutory frameworks forming the bedrock of all subsequent leadership roles.</li>
-        </ul>
-      </div>
-    </div>
-
-    <hr class="divider" style="margin-top:10px;">
-
-    <table class="sig-table">
-      <thead>
-        <tr><th>Assignment Type</th><th>Client / Entity</th><th>Scope &amp; Coverage</th></tr>
-      </thead>
+    <!-- RESPONSIBILITIES TABLE -->
+    <div class="sec-head" style="margin-bottom:8px"><h2>KEY RESPONSIBILITY AREAS — ELECTROSTEEL CASTINGS LTD</h2><div class="line"></div></div>
+    <table class="resp-table">
+      <thead><tr><th style="width:26%">Responsibility Area</th><th>Strategic Contribution &amp; Impact</th></tr></thead>
       <tbody>
-        <tr><td><strong>Statutory &amp; Tax Audit (CARO)</strong></td><td>WBHIDCO, Saboo Computers, Burnie Braes Tea, Borojalingah Tea</td><td>Full CARO · 2010–2013</td></tr>
-        <tr><td><strong>Council Audit — Ministry of Commerce</strong></td><td>EEPC India &amp; SHEFXIL (Kolkata, Mumbai, Delhi, Chennai, Bangalore, Hyderabad, Jalandhar)</td><td>Fixed assets, MDA schedules, TDS, Internal Audit</td></tr>
-        <tr><td><strong>Internal &amp; Expenditure Audit</strong></td><td>UAL Industries (UP &amp; Orissa), NorthBrook Jute, Timpack Pvt. Ltd., East India Natural Goods</td><td>Full internal audit cycle</td></tr>
-        <tr><td><strong>Insurance &amp; Stock Audit</strong></td><td>National Insurance Co., Maa Shakambari, Ashirwad Steel, National Pipes, Mother India Rice Mill</td><td>Branch insurance + physical stock valuation</td></tr>
+        <tr><td><strong>🔹 Strategic Procurement &amp; Sourcing</strong></td><td>Directed cost-effective procurement via advanced negotiations; alternative sourcing for critical materials; techno-commercial evaluations balancing technical needs and cost factors.</td></tr>
+        <tr><td><strong>📦 Supply Chain &amp; Inventory</strong></td><td>Optimized material flow, reduced inventory carrying costs; defined min-max levels; managed reordering cycles based on production demand and lead times across multi-location operations.</td></tr>
+        <tr><td><strong>📃 Contract Negotiation &amp; Risk</strong></td><td>Led complex contract negotiations securing favourable, compliant, risk-mitigated terms; performed procurement cost modelling, benchmarking, and spend visibility analysis.</td></tr>
+        <tr><td><strong>💻 Digital Transformation</strong></td><td>Led SAP S/4HANA rollout and M-Junction auction-based procurement platform — achieved ~20% efficiency improvement; integrated Fiori, BW/BPC for real-time procurement analytics.</td></tr>
+        <tr><td><strong>👥 Team Leadership (35+)</strong></td><td>Mentored high-performing teams of 35+ members; promoted ownership culture; managed KRA delivery and performance benchmarking; delegated resource allocation effectively.</td></tr>
+        <tr><td><strong>🛡️ Compliance &amp; ESG</strong></td><td>Ensured ISO 9001/14001/45001, SA 8001, GST, e-Waybill, and statutory compliance; championed ESG sustainable sourcing, waste recycling, and ethical procurement governance.</td></tr>
+        <tr><td><strong>📈 MIS &amp; Market Intelligence</strong></td><td>Generated monthly MIS: ABC Analysis, Safety Stock, Aging Reports, Cost Center Tracking, Shelf-Life Monitoring; conducted sector benchmarking and demand forecasting.</td></tr>
+        <tr><td><strong>🔄 Vendor Development</strong></td><td>Expanded supplier network for resilience; supplier diversification; managed onboarding, evaluation rating systems, and long-term partnerships ensuring timely quality delivery.</td></tr>
+        <tr><td><strong>🏞️ Land &amp; Disposal Mgmt</strong></td><td>Handled land procurement end-to-end: valuation, registration, approvals; managed material disposal via reuse, recycling, and certified vendors for sustainability.</td></tr>
       </tbody>
     </table>
 
+    <div class="sec-head" style="margin-bottom:7px"><h2>MAJOR PROJECT CONTRIBUTIONS — PLANT-WISE</h2><div class="line"></div></div>
+    <table class="proj-table">
+      <thead><tr><th>Location</th><th>Plant / Unit</th><th>Details &amp; Scale</th></tr></thead>
+      <tbody>
+        <tr><td><span class="loc-tag">KW</span>Khardah Works</td><td>Ductile Iron Pipe Plant</td><td>Production scaled from 50K TPA (1995) → <strong>340K TPA (2025)</strong>; 8 casting machines, 2 Annealing Furnaces — MBF Realignment, DIP Shutdown procurement led</td></tr>
+        <tr><td><span class="loc-tag">KW</span>Khardah Works</td><td>Blast Furnace Unit</td><td>Upgraded <strong>700 TPD → 1000 TPD</strong>; PCI Plant, Oxygen Plant, 3 Stoves — procurement for full capital project executed</td></tr>
+        <tr><td><span class="loc-tag">KW</span>Khardah Works</td><td>Sinter &amp; CPP Plants</td><td>30 Sq.m Sinter (36,000 TPA); CPP Shutdown procurement; R&amp;D Coating, Paint Project, Fabrication &amp; Erection at Bansberia</td></tr>
+        <tr><td><span class="loc-tag">KW</span>Khardah Works</td><td>Zinc Coating · Paint · Bitumen</td><td>60,000–80,000 TPA Zinc; Paint Plant 350–400 pipes/shift; Bitumen 300 pipes/shift — corrosion protection procurement</td></tr>
+        <tr><td><span class="loc-tag">HW</span>Haldia Works</td><td>Coke Oven + Power Plant</td><td>4 Battery Coke Oven (2 Lakh TPA); Power Plant 15 MW; Ferro Alloys 9 MVA; Blast Furnace Gas &amp; Coke Oven Plant projects</td></tr>
+        <tr><td><span class="loc-tag">SW</span>South Works</td><td>Coke Oven &amp; Power</td><td>Coke Oven 1.8 Lakh TPA; Power Plant 18 MW — full procurement support for capital expansion</td></tr>
+      </tbody>
+    </table>
+
+    <hr class="divider">
+
+    <!-- Arvac & Hotel Lindsay detail cards -->
+    <div class="sec-head" style="margin-bottom:7px"><h2>EARLIER CAREER — DETAILED SCOPE</h2><div class="line"></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div class="exp-card-full" style="margin-bottom:0;border-left-color:var(--forest2);">
+        <div class="company-logo-area">
+          <div class="logo-box arvac-box"><span>AVC</span><span class="logo-label">MFG</span></div>
+          <div><div class="role-title">Accountant &amp; Purchase cum Store Keeper</div><div class="co-name">Arvac Forgecast Limited · Mar 2006 – Dec 2008</div></div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Managed <strong>procurement operations</strong> — requisitions, vendor follow-ups, order processing, sourcing of store &amp; spare items.</li>
+          <li>Supervised <strong>material unloading, receiving, and storage</strong> for seamless material flow.</li>
+          <li>Verified all financial entries — bank, cash, journal, S&amp;P; conducted reconciliations; <strong>coordinated with auditors</strong>.</li>
+          <li>Implemented <strong>supplier evaluation and rating systems</strong>; participated in rate contract finalizations and tendering.</li>
+        </ul>
+      </div>
+      <div class="exp-card-full" style="margin-bottom:0;border-left-color:var(--plum2);">
+        <div class="company-logo-area">
+          <div class="logo-box hosp-box"><span>HTL</span><span class="logo-label">HOSP</span></div>
+          <div><div class="role-title">Assistant Accountant</div><div class="co-name">Hotel Lindsay · Jun 2005 – Mar 2006</div></div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Prepared <strong>detailed financial statements</strong>; managed Excise, Sales Tax, ESI, and PF return preparation and filing.</li>
+          <li>Conducted <strong>cash and bank reconciliations</strong> for accuracy; managed accounts payable/receivable with high transaction volumes.</li>
+          <li>Built foundational competency in <strong>multi-sector accounting, statutory compliance</strong>, and financial controls.</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- CAREER TIMELINE -->
-    <div class="timeline-viz">
-      <div class="timeline-title">19-YEAR CAREER JOURNEY</div>
+    <div class="timeline-viz" style="margin-top:10px;">
+      <div class="timeline-title">19-YEAR CAREER JOURNEY — ELECTROSTEEL &amp; BEYOND</div>
       <div class="timeline-path">
-        <div class="timeline-node">
-          <div class="timeline-year">2005</div>
-          <div class="timeline-label"><strong>HOTEL LINDSAY</strong>Asst. Accountant<br>Career Start</div>
-        </div>
+        <div class="timeline-node"><div class="timeline-year">2005</div><div class="timeline-label"><strong>HOTEL LINDSAY</strong>Asst. Accountant<br>Career Foundation</div></div>
         <div class="timeline-arrow">→</div>
-        <div class="timeline-node">
-          <div class="timeline-year">2006</div>
-          <div class="timeline-label"><strong>ARVAC FORGECAST</strong>Purchase &amp;<br>Store + Accounts</div>
-        </div>
+        <div class="timeline-node"><div class="timeline-year">2006</div><div class="timeline-label"><strong>ARVAC FORGECAST</strong>Purchase + Store<br>+ Accounts</div></div>
         <div class="timeline-arrow">→</div>
-        <div class="timeline-node">
-          <div class="timeline-year">2008</div>
-          <div class="timeline-label"><strong>ELECTROSTEEL</strong>Sr. Manager<br>Procurement</div>
-        </div>
+        <div class="timeline-node"><div class="timeline-year">2008</div><div class="timeline-label"><strong>ELECTROSTEEL</strong>Purchase Officer<br>→ Sr. Manager</div></div>
         <div class="timeline-arrow">→</div>
-        <div class="timeline-node">
-          <div class="timeline-year">CA Firm</div>
-          <div class="timeline-label"><strong>AUDIT LEAD</strong>RKP + LNT<br>Multi-sector</div>
-        </div>
+        <div class="timeline-node"><div class="timeline-year">2023</div><div class="timeline-label"><strong>ELECTROSTEEL</strong>Sr. General Mgr<br>Procurement</div></div>
         <div class="timeline-arrow">→</div>
-        <div class="timeline-node">
-          <div class="timeline-year">MNC</div>
-          <div class="timeline-label"><strong>ACCENTURE</strong>FP&amp;A AFBP<br>6× Awards</div>
-        </div>
+        <div class="timeline-node"><div class="timeline-year">Now</div><div class="timeline-label"><strong>LEADING &amp; SCALING</strong>35+ Team · SAP S4<br>ESG · 340K TPA</div></div>
       </div>
     </div>
 
@@ -593,74 +574,93 @@ a{color:inherit;text-decoration:none;}
 
   <div class="p3-kpi-strip">
     <div class="p3-kpi-strip-inner">
-      <div class="p3-kpi"><div class="pn">19+</div><div class="pl">Years Experience</div><div class="ps">Procurement &amp; Finance</div></div>
-      <div class="p3-kpi"><div class="pn">16 Yrs</div><div class="pl">Electrosteel Tenure</div><div class="ps">Sr. Manager — Manufacturing</div></div>
-      <div class="p3-kpi"><div class="pn">6×</div><div class="pl">Accenture Awards</div><div class="ps">Townhall + Encore</div></div>
-      <div class="p3-kpi"><div class="pn">3 MoUs</div><div class="pl">International</div><div class="ps">Govt. of India Trade</div></div>
-      <div class="p3-kpi"><div class="pn">7 Yrs</div><div class="pl">Statutory Sign-off</div><div class="ps">Consecutive FS Finalized</div></div>
+      <div class="p3-kpi"><div class="pn">19+</div><div class="pl">Years Experience</div><div class="ps">Procurement &amp; SCM</div></div>
+      <div class="p3-kpi"><div class="pn">340K</div><div class="pl">TPA Plant Scale</div><div class="ps">Electrosteel DIP Plant</div></div>
+      <div class="p3-kpi"><div class="pn">35+</div><div class="pl">Team Members</div><div class="ps">Led &amp; Mentored</div></div>
+      <div class="p3-kpi"><div class="pn">~20%</div><div class="pl">Efficiency Gain</div><div class="ps">SAP S/4HANA Rollout</div></div>
+      <div class="p3-kpi"><div class="pn">4 ISO</div><div class="pl">Standards Maintained</div><div class="ps">9001·14001·45001·SA8001</div></div>
+      <div class="p3-kpi"><div class="pn">16 Yrs</div><div class="pl">Electrosteel Tenure</div><div class="ps">PO → SGM Progression</div></div>
     </div>
   </div>
 
   <div class="p3-body">
 
-    <div class="sec-head" style="margin-bottom:10px"><h2>SKILLS MATRIX</h2><div class="line"></div></div>
+    <div class="sec-head" style="margin-bottom:9px"><h2>SKILLS MATRIX</h2><div class="line"></div></div>
     <div class="p3-skills-grid">
       <div class="p3-sk">
         <h4>Procurement &amp; Supply Chain</h4>
-        <div class="tags"><span>PO Management</span><span>Contract Creation</span><span>Work Orders</span><span>Vendor Mgmt</span><span>Material Master</span><span>Inventory Control</span><span>Store Mgmt</span><span>FIFO/LIFO</span><span>Stock Reconciliation</span></div>
+        <div class="tags">
+          <span>Strategic Sourcing</span><span>Global Sourcing</span><span>Contract Negotiation</span>
+          <span>Supplier Consolidation</span><span>Vendor Management</span><span>Supplier Evaluation</span>
+          <span>Purchase Order Mgmt</span><span>Demand Forecasting</span><span>Imported Material Sourcing</span>
+          <span>Auction-Based Procurement</span><span>Alternative Sourcing</span><span>Cost Reduction</span>
+          <span>Lead Time Analysis</span><span>Procurement Analytics</span><span>Project-Based Procurement</span>
+        </div>
       </div>
       <div class="p3-sk">
-        <h4>Finance &amp; Accounting</h4>
-        <div class="tags"><span>R2R / Month-End Close</span><span>FP&amp;A</span><span>Budgeting</span><span>Forecasting</span><span>Variance Analysis</span><span>Bank Reconciliation</span><span>Bookkeeping</span><span>Payment Processing</span><span>Statutory Audit</span></div>
+        <h4>Inventory, Finance &amp; Technology</h4>
+        <div class="tags">
+          <span>Lean Inventory Mgmt</span><span>ABC Analysis</span><span>Safety Stock Monitoring</span>
+          <span>Inventory Turnover</span><span>SAP MM / FICO / S4</span><span>SAP Fiori / BW / BPC</span>
+          <span>Power BI</span><span>M-Junction Platform</span><span>MIS Reporting</span>
+          <span>Cost Center Tracking</span><span>Financial Planning</span><span>Accounts Payable/Receivable</span>
+          <span>GST &amp; e-Waybill</span><span>Bank Reconciliation</span>
+        </div>
       </div>
       <div class="p3-sk">
-        <h4>Systems &amp; Technology</h4>
-        <div class="tags"><span>SAP FICO</span><span>SAP MM</span><span>SAP BW/BPC</span><span>Tally</span><span>Oracle</span><span>Quick ERP</span><span>Power BI</span><span>MS Excel</span><span>AI Tools</span><span>FoxPro</span><span>ACE</span></div>
-      </div>
-      <div class="p3-sk">
-        <h4>Compliance &amp; Leadership</h4>
-        <div class="tags"><span>GST Compliance</span><span>e-Waybill</span><span>TDS / ROC</span><span>CARO Reporting</span><span>SOX Controls</span><span>Team Leadership</span><span>Process Excellence</span><span>Digital Transformation</span></div>
+        <h4>Leadership, Compliance &amp; ESG</h4>
+        <div class="tags">
+          <span>Team Leadership (35+)</span><span>KRA Management</span><span>Change Management</span>
+          <span>Cross-Functional Collaboration</span><span>ISO 9001 / 14001 / 45001</span><span>SA 8001</span>
+          <span>ESG Compliance</span><span>Sustainable Sourcing</span><span>5S Implementation</span>
+          <span>TPM &amp; Kaizen</span><span>Risk Mitigation</span><span>Stakeholder Engagement</span>
+          <span>Supplier Governance</span><span>Ethical Procurement</span>
+        </div>
       </div>
     </div>
 
     <div class="sec-head" style="margin-bottom:8px"><h2>KEY ACHIEVEMENTS</h2><div class="line"></div></div>
     <div class="achieve-grid">
-      <div class="ach-card" data-icon="🏭"><div class="ach-num">16 Yrs</div><h5>Electrosteel Sr. Manager</h5><p>Longest-serving procurement leader — delivering consistent operational excellence in manufacturing.</p></div>
-      <div class="ach-card" data-icon="🏆"><div class="ach-num">6×</div><h5>Accenture Awards</h5><p>4× Townhall Client Value Creation awards + 2× Encore Core Value Champion recognition.</p></div>
-      <div class="ach-card" data-icon="🌏"><div class="ach-num">3 MoUs</div><h5>International Trade Partnerships</h5><p>Led MoU signing with NACCIMA, Lagos Chamber &amp; Indian Professionals Forum for Govt. of India.</p></div>
-      <div class="ach-card" data-icon="🥇"><div class="ach-num">Rank 1</div><h5>Academic Excellence</h5><p>Ranked 1st in B.Com batch, 4th overall in college — strong analytical foundation.</p></div>
-      <div class="ach-card" data-icon="⚡"><div class="ach-num">60-Day</div><h5>Challenge Winner — EQ-FO</h5><p>Won competitive 60-Day Excellence Challenge at Accenture, Feb 2021.</p></div>
-      <div class="ach-card" data-icon="🚀"><div class="ach-num">Digital</div><h5>India Platform — Govt. Council</h5><p>Spearheaded online membership &amp; certificate issuance aligned with Digital India initiative.</p></div>
+      <div class="ach-card" data-icon="🏭"><div class="ach-num">SGM</div><h5>Senior General Manager — ECL</h5><p>Progressed from Purchase Officer to SGM in 16+ years at Electrosteel — one of India's premier DI pipe manufacturers.</p></div>
+      <div class="ach-card" data-icon="⚡"><div class="ach-num">~20%</div><h5>SAP S/4HANA Efficiency</h5><p>Led full SAP S/4HANA and M-Junction auction-based procurement rollout achieving measurable ~20% efficiency improvement.</p></div>
+      <div class="ach-card" data-icon="🏆"><div class="ach-num">340K</div><h5>Plant Scale: 50K→340K TPA</h5><p>Procurement leadership across the full scale-up of ECL's Khardah DIP Plant from 50,000 TPA (1995) to 340,000 TPA (2025).</p></div>
+      <div class="ach-card" data-icon="🥇"><div class="ach-num">Silver</div><h5>ECL Jamboree Medal · 2023-24</h5><p>Runner Up Team Award at ECL's prestigious Jamboree event held at Tollygunge Club, Kolkata.</p></div>
+      <div class="ach-card" data-icon="💡"><div class="ach-num">ISO×4</div><h5>Multi-Standard Compliance</h5><p>Maintained simultaneous ISO 9001, 14001, 45001, and SA 8001 compliance — zero audit non-conformances.</p></div>
+      <div class="ach-card" data-icon="🚀"><div class="ach-num">5 Sites</div><h5>Multi-Location Project Leadership</h5><p>Delivered procurement for major capital projects: BF Upgrade, Coke Oven, Sinter, CPP, Paint &amp; Coating Plants across 4 ECL sites.</p></div>
     </div>
 
-    <div class="sec-head" style="margin-bottom:8px"><h2>CERTIFICATIONS</h2><div class="line"></div></div>
+    <div class="sec-head" style="margin-bottom:7px"><h2>CERTIFICATIONS</h2><div class="line"></div></div>
     <div class="cert-cloud">
       <span class="cert-pill t1">SAP Financials Essential Training · NASBA</span>
-      <span class="cert-pill t1">Power BI Top Skills · LinkedIn</span>
-      <span class="cert-pill t1">Get Ready for Generative AI · LinkedIn</span>
-      <span class="cert-pill t2">MS Excel Certification · Udemy</span>
-      <span class="cert-pill t2">Lean Six Sigma Primer · Udemy</span>
-      <span class="cert-pill t2">AI 2041: Five Visions for Our Future · LinkedIn</span>
-      <span class="cert-pill t2">GDPR Compliance · LinkedIn</span>
-      <span class="cert-pill t2">QuickBooks Quick Tips &amp; Applications · NASBA</span>
-      <span class="cert-pill t3">Information Security Advocate · Accenture</span>
-      <span class="cert-pill t3">Digital Marketing &amp; Google Analytics · Google / ISB / FICCI</span>
-      <span class="cert-pill t3">Certificate Course in Conflict Analysis · US Institute of Peace</span>
-      <span class="cert-pill t3">Integrity &amp; Anti-Corruption · Central Vigilance Commission</span>
-      <span class="cert-pill t3">Excel: VLOOKUP and XLOOKUP · LinkedIn</span>
-      <span class="cert-pill t3">National Accounting Talent Search 2011–12 · IAA</span>
-      <span class="cert-pill t3">Online Marketing Fundamentals + SEO · eMarketing Institute</span>
-      <span class="cert-pill t3">Virtual Currencies — Bitcoin Case Study · Alison</span>
-      <span class="cert-pill t3">Basics of Financial Planning &amp; Mutual Funds · INDmoney</span>
-      <span class="cert-pill t3">A1 Track Test — English Language (CEFR)</span>
+      <span class="cert-pill t1">Introduction to Generative AI · TCSiON &amp; ULSA</span>
+      <span class="cert-pill t1">Introduction to Supply Chain Planning · TCSiON</span>
+      <span class="cert-pill t2">ISO 45001 Internal Auditor (OHS) · BSI Training Academy</span>
+      <span class="cert-pill t2">Basics of Inventory Management · TCSiON</span>
+      <span class="cert-pill t2">Contract Management for Beginners · TCSiON</span>
+      <span class="cert-pill t2">Lean Six Sigma Training · BitDegree</span>
+      <span class="cert-pill t2">Introduction to Data Analytics · SkillUp by Simplilearn</span>
+      <span class="cert-pill t2">Conceptual Framework for Financial Reporting · Deloitte (Sep'22)</span>
+      <span class="cert-pill t3">IoT — Internet of Things · Great Learning (Jul'23)</span>
+      <span class="cert-pill t3">Python for Machine Learning · Great Learning</span>
+      <span class="cert-pill t3">MATLAB Onramp · MathWorks</span>
+      <span class="cert-pill t3">G Suite / Google Drive Certification · Google</span>
+      <span class="cert-pill t3">Digital Marketing + Google Analytics · Google Applied Digital Skills</span>
+      <span class="cert-pill t3">Basic Metallurgy / Bulk Material Handling / Desulphurisation · TATA Capability Development</span>
+      <span class="cert-pill t3">GST in 90 Minutes · ICT Academy Skycamp</span>
+      <span class="cert-pill t3">Network &amp; Web Security Overview · Risk Pro (Feb'22)</span>
+      <span class="cert-pill t3">Advanced Excel Tutorial · Elearnmarket</span>
+      <span class="cert-pill t3">Introduction to Large Language Models · ULSA</span>
+      <span class="cert-pill t3">B1 Track — English Language CEFR · Jan'22</span>
+      <span class="cert-pill t3">Fiber Optic Cabling / IT Troubleshooting · Udemy</span>
+      <span class="cert-pill t3">Fundamentals of Insurance / US Stocks Essentials · INDmoney</span>
     </div>
 
-    <div class="sec-head" style="margin-bottom:8px"><h2>COMMUNITY &amp; SOCIAL IMPACT</h2><div class="line"></div></div>
+    <div class="sec-head" style="margin-bottom:7px"><h2>COMMUNITY, LEADERSHIP &amp; SOCIAL IMPACT</h2><div class="line"></div></div>
     <div class="community-grid">
-      <div class="community-card"><div class="community-icon">✍</div><div><h6>LinkedIn Contributor — I-Factor Digest</h6><p>Published thought-leadership on India's economic narrative; article featured in Top LinkedIn News, driving engagement on Bharat's growth story.</p></div></div>
-      <div class="community-card"><div class="community-icon">🤝</div><div><h6>Terapanth Professional Forum</h6><p>Active member supporting Health Camps, Career Counselling, Women Empowerment, UDAAN Project, Civil Service Study Centre &amp; spiritual awakening programs.</p></div></div>
-      <div class="community-card"><div class="community-icon">❤️</div><div><h6>CSR &amp; Community Initiatives</h6><p>Active PwC CSR participant; Certificate Holder — Mega Blood Donation Drive 2016 under National Blood Transfusion Council.</p></div></div>
-      <div class="community-card"><div class="community-icon">🏏</div><div><h6>Sports, Wellness &amp; Lifelong Learning</h6><p>Cricket Runner-Up (Ganges Welfare Society); badminton enthusiast; teaches underprivileged children; regularly upskills through tech &amp; finance platforms.</p></div></div>
+      <div class="community-card"><div class="community-icon">🏭</div><div><h6>TPM, Kaizen &amp; 5S Champion — ECL</h6><p>Proactively engaged in Total Productive Maintenance (TPM) and Kaizen (KK) activities; championed 5S under Office TPM enhancing workplace discipline, organization, and efficiency.</p></div></div>
+      <div class="community-card"><div class="community-icon">🤝</div><div><h6>Jain Shwetamber Terapanthi Mahasabha (JSTM)</h6><p>Active member driving Health Camps, Career Counselling, Women Empowerment, Student Adoption Projects, Economy/Business &amp; Spiritual Awakening Seminars.</p></div></div>
+      <div class="community-card"><div class="community-icon">❤️</div><div><h6>Blood Donation &amp; Community Service</h6><p>Certificate Holder — Mega Blood Donation Drive, National Blood Transfusion Council. Active in corporate CSR, social responsibility, and community wellness programs.</p></div></div>
+      <div class="community-card"><div class="community-icon">🏏</div><div><h6>Sports, Lifelong Learning &amp; Tech Savvy</h6><p>Cricket &amp; Badminton enthusiast; active seminars attendee; continuously upskills across AI, Supply Chain, Finance, and Technology platforms — driven by curiosity and growth mindset.</p></div></div>
     </div>
 
   </div>
@@ -668,8 +668,8 @@ a{color:inherit;text-decoration:none;}
   <div class="quote-finale">
     <div class="qf-big">"</div>
     <div class="qf-text">
-      <p>A procurement strategist with a finance leader's discipline and a technologist's vision. <strong>Supply chains are my domain. Numbers are my language. Operational excellence is my standard.</strong> Driven by an unrelenting thirst for knowledge — continuously pushing boundaries to deliver real impact.</p>
-      <div class="qf-sig">— SUSHIL JHABAK · SENIOR MANAGER, MATERIAL &amp; PROCUREMENT · 19+ YEARS EXCELLENCE</div>
+      <p>A procurement strategist with a supply chain engineer's precision and a leader's purpose. <strong>Cost savings are my mission. Operational excellence is my standard. People are my greatest asset.</strong> Driven by an unrelenting thirst for knowledge — continuously transforming supply chains, building resilient teams, and delivering long-term value for organizations.</p>
+      <div class="qf-sig">— SUSHIL JHABAK · SENIOR GENERAL MANAGER, PROCUREMENT &amp; SUPPLY CHAIN · ELECTROSTEEL CASTINGS LTD · 19+ YEARS</div>
     </div>
   </div>
 </div><!-- /PAGE 3 -->
@@ -687,7 +687,10 @@ async function downloadPDF() {
     const pdf = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4', compress:true, precision:16 });
     const A4_W = 210, A4_H = 297;
     await document.fonts.ready;
-    await new Promise(r => setTimeout(r, 900));
+    await Promise.all(Array.from(document.images).map(img =>
+      img.complete ? Promise.resolve() : new Promise(r => { img.onload=r; img.onerror=r; })
+    ));
+    await new Promise(r => setTimeout(r, 1200));
     for (let i = 0; i < pages.length; i++) {
       btn.textContent = `⏳ Page ${i+1} of ${pages.length} — ultra quality…`;
       const canvas = await html2canvas(pages[i], {
@@ -701,7 +704,7 @@ async function downloadPDF() {
       if (i > 0) pdf.addPage();
       pdf.addImage(imgData, 'PNG', 0, 0, A4_W, A4_H, `p${i}`, 'FAST');
     }
-    pdf.save('Sushil_Jhabak_Senior_Manager_Procurement_Finance.pdf');
+    pdf.save('Sushil_Jhabak_SGM_Procurement_Supply_Chain.pdf');
     btn.textContent = '✓ Downloaded!';
     setTimeout(() => { btn.disabled=false; btn.textContent='⬇ Download PDF — Ultra Quality A4'; }, 4000);
   } catch(e) {
